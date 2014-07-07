@@ -4,3 +4,9 @@ C:\Users\ACox\Desktop\AudioLuvTest\AudioTest\AudioTest\bin\Debug\AudioTest.pdb
 C:\Users\ACox\Desktop\AudioLuvTest\AudioTest\AudioTest\obj\Debug\AudioTest.exe
 C:\Users\ACox\Desktop\AudioLuvTest\AudioTest\AudioTest\obj\Debug\AudioTest.pdb
 C:\Users\ACox\Desktop\AudioLuvTest\AudioTest\AudioTest\obj\Debug\AudioTest.csprojResolveAssemblyReference.cache
+C:\Users\ACox\Desktop\AudioLuv Repository\AudioLuv\Testing Playground\AudioTest\AudioTest\bin\Debug\AudioTest.exe.config
+C:\Users\ACox\Desktop\AudioLuv Repository\AudioLuv\Testing Playground\AudioTest\AudioTest\obj\Debug\AudioTest.exe
+C:\Users\ACox\Desktop\AudioLuv Repository\AudioLuv\Testing Playground\AudioTest\AudioTest\obj\Debug\AudioTest.pdb
+C:\Users\ACox\Desktop\AudioLuv Repository\AudioLuv\Testing Playground\AudioTest\AudioTest\bin\Debug\AudioTest.exe
+C:\Users\ACox\Desktop\AudioLuv Repository\AudioLuv\Testing Playground\AudioTest\AudioTest\bin\Debug\AudioTest.pdb
+C:\Users\ACox\Desktop\AudioLuv Repository\AudioLuv\Testing Playground\AudioTest\AudioTest\obj\Debug\AudioTest.csprojResolveAssemblyReference.cache
