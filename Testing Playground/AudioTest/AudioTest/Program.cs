@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.DirectX.DirectSound;
 using System.IO;
+using System.Collections;
 
 namespace AudioTest
 {
     class Program
     {
 
-
+        //Machine is LittleEndian
         public static void  Main(String[] args)
         {
             /*
@@ -47,18 +48,47 @@ namespace AudioTest
             }
             buffer.Stop();
 
+            
+            System.Text.ASCIIEncoding ascii = new ASCIIEncoding();
+            List<Byte> byteArray = new List<Byte>();
+
+            /*
+             * add code to handle any Endian!!!!!!
+             */
+
+            //RIFF Header
+            byteArray.AddRange(ascii.GetBytes("RIFF").Reverse()); //bigE
+            byteArray.AddRange(BitConverter.GetBytes(44 + buffer.Caps.BufferBytes)); //overall size
+            byteArray.AddRange(ascii.GetBytes("WAVE").Reverse()); //bigE
+
+            //fmt chunk
+            byteArray.AddRange(ascii.GetBytes("fmt").Reverse()); //bigE
+            byteArray.AddRange(BitConverter.GetBytes(16)); //PCM length always 16 byte
+            byteArray.AddRange(BitConverter.GetBytes(1)); //means no compression
+            byteArray.AddRange(BitConverter.GetBytes(wf.Channels));
+            byteArray.AddRange(BitConverter.GetBytes(wf.SamplesPerSecond));
+            byteArray.AddRange(BitConverter.GetBytes(wf.AverageBytesPerSecond));
+            byteArray.AddRange(BitConverter.GetBytes(wf.BlockAlign));
+            byteArray.AddRange(BitConverter.GetBytes(wf.BitsPerSample));
+
+            //data chunk
+            byteArray.AddRange(ascii.GetBytes("data").Reverse()); //bigE
+            byteArray.AddRange(BitConverter.GetBytes(buffer.Caps.BufferBytes));
+
+            Byte[] header = byteArray.ToArray();
+
             String filePath = @"C:\Users\ACox\Desktop\AudioLuv Repository\Test.wav";
             if(File.Exists(filePath)){
                 File.Delete(filePath);
             }
 
+            //Byte[] data = buffer.Read(0, System.Type.GetType("Byte[]"), buffer.Caps.BufferBytes, LockFlag.None);
+
             using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
             {
-                //write wav headers here
+                fileStream.Write(header, 0, header.Length);
                 buffer.Read(0, fileStream, buffer.Caps.BufferBytes, LockFlag.None);
-                buffer.Dispose();
             }
-
             Console.WriteLine("Done");
             Console.ReadKey();
         }
