@@ -52,11 +52,11 @@ namespace AudioTest
 
             //RIFF Header
             byteArray.AddRange(Encoding.UTF8.GetBytes("RIFF")); //bigE
-            byteArray.AddRange(BitConverter.GetBytes(36 + (buffer.Caps.BufferBytes / 8))); //overall size
+            byteArray.AddRange(BitConverter.GetBytes(0)); //overall size
             byteArray.AddRange(Encoding.UTF8.GetBytes("WAVE")); //bigE
 
             //fmt chunk
-            byteArray.AddRange(ascii.GetBytes("fmt")); //bigE
+            byteArray.AddRange(Encoding.UTF8.GetBytes("fmt")); //bigE
             byteArray.AddRange(BitConverter.GetBytes(16)); //PCM length always 16 byte
             byteArray.AddRange(BitConverter.GetBytes(1)); //means no compression
             byteArray.AddRange(BitConverter.GetBytes(wf.Channels));
@@ -66,7 +66,7 @@ namespace AudioTest
             byteArray.AddRange(BitConverter.GetBytes(wf.BitsPerSample));
 
             //data chunk
-            byteArray.AddRange(ascii.GetBytes("data")); //bigE
+            byteArray.AddRange(Encoding.UTF8.GetBytes("data")); //bigE
             byteArray.AddRange(BitConverter.GetBytes(buffer.Caps.BufferBytes));
 
             Byte[] header = byteArray.ToArray();
