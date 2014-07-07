@@ -36,7 +36,7 @@ namespace AudioTest
 
             CaptureBufferDescription bufferDesc = new CaptureBufferDescription();
             bufferDesc.Format = wf;
-            bufferDesc.BufferBytes = (wf.BitsPerSample / 8) * wf.SamplesPerSecond * 5; //<--seconds
+            bufferDesc.BufferBytes = (wf.BitsPerSample / 8) * wf.SamplesPerSecond * 1; //<--seconds
             bufferDesc.WaveMapped = false;
             bufferDesc.ControlEffects = false;
 
@@ -47,22 +47,16 @@ namespace AudioTest
                 System.Threading.Thread.Sleep(100);
             }
             buffer.Stop();
-
             
-            System.Text.ASCIIEncoding ascii = new ASCIIEncoding();
             List<Byte> byteArray = new List<Byte>();
 
-            /*
-             * add code to handle any Endian!!!!!!
-             */
-
             //RIFF Header
-            byteArray.AddRange(ascii.GetBytes("RIFF").Reverse()); //bigE
-            byteArray.AddRange(BitConverter.GetBytes(44 + buffer.Caps.BufferBytes)); //overall size
-            byteArray.AddRange(ascii.GetBytes("WAVE").Reverse()); //bigE
+            byteArray.AddRange(Encoding.UTF8.GetBytes("RIFF")); //bigE
+            byteArray.AddRange(BitConverter.GetBytes(36 + (buffer.Caps.BufferBytes / 8))); //overall size
+            byteArray.AddRange(Encoding.UTF8.GetBytes("WAVE")); //bigE
 
             //fmt chunk
-            byteArray.AddRange(ascii.GetBytes("fmt").Reverse()); //bigE
+            byteArray.AddRange(ascii.GetBytes("fmt")); //bigE
             byteArray.AddRange(BitConverter.GetBytes(16)); //PCM length always 16 byte
             byteArray.AddRange(BitConverter.GetBytes(1)); //means no compression
             byteArray.AddRange(BitConverter.GetBytes(wf.Channels));
@@ -72,7 +66,7 @@ namespace AudioTest
             byteArray.AddRange(BitConverter.GetBytes(wf.BitsPerSample));
 
             //data chunk
-            byteArray.AddRange(ascii.GetBytes("data").Reverse()); //bigE
+            byteArray.AddRange(ascii.GetBytes("data")); //bigE
             byteArray.AddRange(BitConverter.GetBytes(buffer.Caps.BufferBytes));
 
             Byte[] header = byteArray.ToArray();
@@ -83,14 +77,16 @@ namespace AudioTest
             }
 
             //Byte[] data = buffer.Read(0, System.Type.GetType("Byte[]"), buffer.Caps.BufferBytes, LockFlag.None);
-
             using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
             {
-                fileStream.Write(header, 0, header.Length);
+                fileStream.Write(header,0,header.Length);
+                fileStream.Flush();
                 buffer.Read(0, fileStream, buffer.Caps.BufferBytes, LockFlag.None);
+                fileStream.Flush();
+                buffer.Dispose();
             }
-            Console.WriteLine("Done");
-            Console.ReadKey();
+            //Console.WriteLine("Done");
+            //Console.ReadKey();
         }
     }
 }
