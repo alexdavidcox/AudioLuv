@@ -36,6 +36,8 @@ namespace AudioTest
             CaptureBufferDescription bufferDesc = new CaptureBufferDescription();
             bufferDesc.Format = wf;
             bufferDesc.BufferBytes = (wf.BitsPerSample / 8) * wf.SamplesPerSecond * 5; //<--seconds
+            bufferDesc.WaveMapped = false;
+            bufferDesc.ControlEffects = false;
 
             CaptureBuffer buffer = new CaptureBuffer(bufferDesc, soundCard);
             buffer.Start(false);
@@ -43,6 +45,7 @@ namespace AudioTest
             {
                 System.Threading.Thread.Sleep(100);
             }
+            buffer.Stop();
 
             String filePath = @"C:\Users\ACox\Desktop\AudioLuv Repository\Test.wav";
             if(File.Exists(filePath)){
@@ -51,8 +54,13 @@ namespace AudioTest
 
             using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
             {
+                //write wav headers here
                 buffer.Read(0, fileStream, buffer.Caps.BufferBytes, LockFlag.None);
+                buffer.Dispose();
             }
+
+            Console.WriteLine("Done");
+            Console.ReadKey();
         }
     }
 }
