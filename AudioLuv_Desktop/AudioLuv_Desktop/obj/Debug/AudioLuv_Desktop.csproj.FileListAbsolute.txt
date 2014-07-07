@@ -1,0 +1,22 @@
+c:\users\acox\documents\visual studio 2012\Projects\AudioLuv_Desktop\AudioLuv_Desktop\bin\Debug\AudioLuv_Desktop.exe.config
+c:\users\acox\documents\visual studio 2012\Projects\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.csprojResolveAssemblyReference.cache
+c:\users\acox\documents\visual studio 2012\Projects\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\MainWindow.baml
+c:\users\acox\documents\visual studio 2012\Projects\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\MainWindow.g.cs
+c:\users\acox\documents\visual studio 2012\Projects\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\App.g.cs
+c:\users\acox\documents\visual studio 2012\Projects\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop_MarkupCompile.cache
+c:\users\acox\documents\visual studio 2012\Projects\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.g.resources
+c:\users\acox\documents\visual studio 2012\Projects\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.Properties.Resources.resources
+c:\users\acox\documents\visual studio 2012\Projects\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.csproj.GenerateResource.Cache
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\bin\Debug\AudioLuv_Desktop.exe.config
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.csprojResolveAssemblyReference.cache
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\MainWindow.baml
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\MainWindow.g.cs
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\App.g.cs
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop_MarkupCompile.cache
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.g.resources
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.Properties.Resources.resources
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.csproj.GenerateResource.Cache
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\bin\Debug\AudioLuv_Desktop.exe
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\bin\Debug\AudioLuv_Desktop.pdb
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.exe
+C:\Users\ACox\Desktop\AudioLuv\AudioLuv_Desktop\AudioLuv_Desktop\obj\Debug\AudioLuv_Desktop.pdb
